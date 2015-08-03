@@ -18,6 +18,5 @@ User stories:
 
 -A user should be able to add a brief description to the site or account they're linking to.
 
-![SocialHub]
-(http://i.imgur.com/CiyTpe9.png?1)
+[Imgur](http://i.imgur.com/CiyTpe9.png?1)
 
