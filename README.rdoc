@@ -1,7 +1,6 @@
-== README
+== SocialHub
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+SocialHub is a place to host, showcase, and redirect to all the various internet accounts you have on the web that you want to show and share with others.
 
 Things you may want to cover:
 
