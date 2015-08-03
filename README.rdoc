@@ -3,12 +3,19 @@
 SocialHub is a place to host, showcase, and redirect to all the various internet accounts you have on the web that you want to show and share with others.
 
 User stories: 
+
 -A user should be able to log in
+
 -A user should be able to update their profile image
+
 -A user sould be able to update their profile bio
+
 -A user should be able to update their Name
+
 -Users should be able to add or delete various links to accounts
+
 -A user should be able to attatch an img to the account they're adding
+
 -A user should be able to add a brief description to the site or account they're linking to.
 
 ![SocialHub]
