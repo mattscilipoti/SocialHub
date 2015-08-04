@@ -1,6 +1,6 @@
 class HubsController < ApplicationController
   def index
-    @hubs = Hub.all
+    @hubs = User.find(session[:user]["id"]).hubs
   end
 
   def new
@@ -8,7 +8,8 @@ class HubsController < ApplicationController
   end
 
   def create
-    @hub = Hub.create(hub_params)
+    @user = User.find(session[:user]["id"])
+    @hub = @user.hubs.create!(hub_params)
     redirect_to '/'
   end
 

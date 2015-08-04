@@ -8,17 +8,26 @@
 </head>
 <body>
   <div class="contain">
-    <%= link_to "Home", '/' %>
+    <nav class="user_controls">
+      <%= link_to "Home", '/' %>
+      <%= link_to "Create New Hub", new_hub_path %>
+      <%= link_to "People", "#" %>
 
-    <%= link_to "Create New Hub", new_hub_path %>
+      <% if session[:user] %>
+        <a href="/sign_out"><%= session[:user]["email"] %>: sign out</a></h2>
+      <% else %>
+        <a href="/sign_up">Sign up</a>
+        <a href="/sign_in">Sign in</a>
+      <% end %>
 
-    <%= link_to "Sign In", "#" %>
+      <h3>
+        <%= flash[:notice] %>
+      </h3>
+    </nav>
 
-    <%= link_to "Create Account", "#" %>
-
-    <%= link_to "People", "#" %>
-
-    <%= yield %>
+    <section class="content">
+      <%= yield %>
+    </section>
   </div>
 </body>
 </html>
