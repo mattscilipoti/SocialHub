@@ -1,0 +1,23 @@
+<h1>Here are my Hubs</h1>
+
+<% @hubs.each do |hub| %>
+<div class="hub">
+
+  <img src="<%= hub.photo_url%>" alt="" />
+
+  <h2>
+    <a href= "<%= hub.acc_link %>" target="_blank">
+      <%= hub.title %>
+    </a>
+  </h2>
+
+  <p>
+    <%= hub.description %>
+  </p>
+
+  <p>
+    <%= link_to 'edit', edit_hub_path(hub) %>
+  </p>
+
+</div>
+<% end %>

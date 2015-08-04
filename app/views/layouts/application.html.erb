@@ -7,8 +7,18 @@
   <%= csrf_meta_tags %>
 </head>
 <body>
+  <div class="contain">
+    <%= link_to "Home", '/' %>
 
-<%= yield %>
+    <%= link_to "Create New Hub", new_hub_path %>
 
+    <%= link_to "Sign In", "#" %>
+
+    <%= link_to "Create Account", "#" %>
+
+    <%= link_to "People", "#" %>
+
+    <%= yield %>
+  </div>
 </body>
 </html>

@@ -1,0 +1,23 @@
+<h3>Edit A Hub</h3>
+
+<%= form_for @hub do |f| %>
+
+  <%= f.label :acc_link %>
+  <%= f.text_field :acc_link %>
+
+  <%= f.label :photo_url %>
+  <%= f.text_field :photo_url %>
+
+  <%= f.label :title %>
+  <%= f.text_field :title %>
+
+  <%= f.label :description %>
+  <%= f.text_field :description %>
+
+  <%= f.submit %>
+
+<% end %>
+
+<%= form_for @hub, method: :delete do |f| %>
+  <%= f.submit value="Delete"%>
+<% end %>
