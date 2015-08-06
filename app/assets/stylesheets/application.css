@@ -117,3 +117,15 @@ section {
 .user_profile {
   border-bottom: 1px solid #444;
 }
+
+.dashboard {
+  text-align: center;
+  border-bottom: 1px solid #ccc;
+}
+
+.dHeading,
+.dControls {
+  display: inline-block;
+  width: 50%;
+  text-align: center;
+}

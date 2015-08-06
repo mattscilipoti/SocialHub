@@ -1,18 +1,33 @@
 <h2>New hub</h2>
 
 <%= form_for @hub do |f| %>
+  <p>
+    <%= f.label :acc_link %>
+    <br>
+    <%= f.text_field :acc_link %>
+  </p>
 
-  <%= f.label :acc_link %>
-  <%= f.text_field :acc_link %>
+  <p>
+    <%= f.label :photo_url %>
+    <br>
+    <%= f.text_field :photo_url %>
+  </p>
 
-  <%= f.label :photo_url %>
-  <%= f.text_field :photo_url %>
 
-  <%= f.label :title %>
-  <%= f.text_field :title %>
+  <p>
+    <%= f.label :title %>
+    <br>
+    <%= f.text_field :title %>
+  </p>
 
-  <%= f.label :description %>
-  <%= f.text_field :description %>
+
+  <p>
+    <%= f.label :description %>
+    <br>
+    <%= f.text_field :description %>
+
+  </p>
+
 
   <%= f.submit %>
 
