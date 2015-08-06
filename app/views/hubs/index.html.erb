@@ -12,17 +12,17 @@
 
 <% @hubs.each do |hub| %>
     <div class="aHub">
-      <h2>
-        <a href="<%= hub.acc_link %>" target="_blank">
-          <%= hub.title %>
-        </a>
-      </h2>
+        <h2>
+          <a class="hub_link" href="<%= hub.acc_link %>" target="_blank">
+            <%= hub.title %>
+          </a>
+        </h2>
 
-      <p> <img  alt="" src="<%= hub.photo_url%>"/> </p>
+        <p> <img class="hub_img" alt="" src="<%= hub.photo_url%>"/> </p>
 
-      <p> <%= hub.description %> </p>
-      <p class='editHub'>
-        <%= link_to 'Edit', edit_hub_path(hub) %>
-      </p>
+        <p class="hub_info"> <%= hub.description %> </p>
+        <p class='editHub'>
+          <%= link_to 'Edit', edit_hub_path(hub) %>
+        </p>
     </div>
   <% end %>

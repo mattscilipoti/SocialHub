@@ -48,7 +48,7 @@ class UsersController < ApplicationController
     end
 
     flash[:notice] = message
-    redirect_to action: :sign_up
+    redirect_to '/sign_in'
   end
 
   def sign_in

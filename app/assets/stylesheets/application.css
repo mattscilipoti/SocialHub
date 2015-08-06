@@ -69,7 +69,7 @@ body {
 }
 
 * a {
-  color: #333;
+  color: #444;
   margin: 10px;
 }
 
@@ -106,16 +106,9 @@ section {
   margin: 0 auto;
 }
 
-.aHub {
-  /*border: 1px solid red;*/
-  max-width: 20%;
-  display: inline-block;
-  text-align: center;
-  margin: 2%;
-}
 
 .user_profile {
-  border-bottom: 1px solid #444;
+  border-bottom: 1px solid #ccc;
 }
 
 .dashboard {
@@ -123,9 +116,44 @@ section {
   border-bottom: 1px solid #ccc;
 }
 
+.dashboard a {
+  font-weight: 800;
+  color: rgb(255, 222, 0);
+}
+
 .dHeading,
 .dControls {
   display: inline-block;
   width: 50%;
   text-align: center;
+}
+
+.aHub {
+  border: 1px solid #ccc;
+  width: 30%;
+  height: 300px;
+  display: inline-block;
+  text-align: center;
+  margin: 1%;
+  overflow: scroll;
+}
+
+.editHub a {
+  color: rgb(255, 222, 0);
+  font-size: 200%;
+  padding: 1%;
+}
+
+.hub_img {
+  max-width: 70px;
+  height: 70px;
+}
+
+.hub_info {
+  text-align: center;
+  max-height: 150px;
+  overflow: scroll;
+  max-width: 100%;
+  margin-top: 1%;
+  padding: 1%;
 }

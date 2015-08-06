@@ -13,12 +13,12 @@
   <% @hubs.each do |hub| %>
     <div class="aHub">
       <h2>
-        <a href= "<%= hub.acc_link %>" target="_blank">
+        <a class="hub_link" href= "<%= hub.acc_link %>" target="_blank">
           <%= hub.title %>
         </a>
       </h2>
-      <p> <img src="<%= hub.photo_url%>" alt="" /> </p>
-      <p> <%= hub.description %> </p>
+      <p> <img class="hub_img" src="<%= hub.photo_url%>" alt="" /> </p>
+      <p class="hub_info"> <%= hub.description %> </p>
     </div>
   <% end %>
 
