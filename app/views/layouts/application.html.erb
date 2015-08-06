@@ -1,33 +1,49 @@
 <!DOCTYPE html>
 <html>
+
 <head>
   <title>Socialhub</title>
   <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
-  <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
-  <%= csrf_meta_tags %>
+    <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
+      <%= csrf_meta_tags %>
+        <link href='http://fonts.googleapis.com/css?family=Open+Sans:400,800' rel='stylesheet' type='text/css'>
 </head>
+
 <body>
-  <div class="contain">
-    <nav class="user_controls">
-      <%= link_to "Home", '/' %>
-      <%= link_to "Create New Hub", new_hub_path %>
-      <%= link_to "People", "#" %>
 
+
+  <nav class="top_nav">
+
+    <div class="nav-section">
+      <p> <%= link_to 'Explore Users', '/users' %> </p>
+    </div>
+
+    <div class="nav-section">
+      <h1><%= link_to "SocialHub", '/' %></h1>
+    </div>
+
+    <div class="nav-section">
       <% if session[:user] %>
-        <a href="/sign_out"><%= session[:user]["email"] %>: sign out</a></h2>
+        <p>
+          <img class="navImg" src="<%= session[:user]['photo_url'] %>">
+          <%= link_to session[:user]["first_name"], user_path(session[:user]["id"]) %>
+        </p>
+        <p> <a href="/sign_out">SIGN OUT</a> </p>
       <% else %>
-        <a href="/sign_up">Sign up</a>
-        <a href="/sign_in">Sign in</a>
+        <p> <a href="/sign_up">SIGN UP</a> </p>
+        <p> <a href="/sign_in">SIGN IN</a> </p>
       <% end %>
+    </div>
 
-      <h3>
-        <%= flash[:notice] %>
-      </h3>
-    </nav>
+  </nav>
 
-    <section class="content">
-      <%= yield %>
-    </section>
+
+  <div class="wrap">
+    <%= flash[:notice] %>
+    <%= yield %>
   </div>
+
+
 </body>
+
 </html>

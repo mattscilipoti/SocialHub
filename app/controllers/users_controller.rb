@@ -1,6 +1,32 @@
 class UsersController < ApplicationController
   skip_before_action :authenticate
 
+  def index
+    @users = User.all
+    render 'index'
+  end
+
+  def show
+    @user = User.find(params[:id])
+    @hubs = @user.hubs
+  end
+
+  def edit
+    @user = User.find(session[:user]["id"])
+  end
+
+  def update
+    @user = User.find(session[:user]["id"])
+    @user.update(user_params)
+
+    reset_session
+    redirect_to "/"
+  end
+
+  def find
+    @users = User.all
+  end
+
   def sign_up
   end
 
@@ -8,9 +34,11 @@ class UsersController < ApplicationController
     user = User.new(
       first_name: params[:first_name],
       last_name: params[:last_name],
+      photo_url: params[:photo_url],
       email: params[:email],
       password_digest: BCrypt::Password.create(params[:password])
     )
+
     if params[:password_confirmation] != params[:password]
       message = "Your passwords don't match!"
     elsif user.save
@@ -18,6 +46,7 @@ class UsersController < ApplicationController
     else
       message = "Your account couldn't be created. Did you enter a unique username and password?"
     end
+
     flash[:notice] = message
     redirect_to action: :sign_up
   end
@@ -27,9 +56,10 @@ class UsersController < ApplicationController
 
   def sign_in!
     @user = User.find_by(email: params[:email])
+
     if !@user
       message = "This user doesn't exist!"
-    elsif !BCrypt::Password.new( @user.password_digest).is_password?(params[:password])
+    elsif !BCrypt::Password.new( @user.password_digest ).is_password?(params[:password])
       message = "Your password's wrong!"
     else
       message = "You're signed in, #{@user.first_name}!"
@@ -40,7 +70,7 @@ class UsersController < ApplicationController
       session[:user] = @user
     end
     flash[:notice] = message
-    redirect_to action: :sign_in
+    redirect_to "/"
   end
 
   def sign_out
@@ -48,4 +78,8 @@ class UsersController < ApplicationController
     redirect_to "/"
   end
 
+private
+  def user_params
+    params.require(:user).permit(:first_name, :last_name, :photo_url, :password)
+  end
 end

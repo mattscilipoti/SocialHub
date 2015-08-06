@@ -1,0 +1,25 @@
+<section class="user_profile">
+    <p>
+      <img class="profilePic" src="<%= @user.photo_url %>" alt="" />
+    </p>
+  <div class="profileName">
+    <h2><%=@user.first_name%> <%= @user.last_name %></h2>
+  </div>
+</section>
+
+<section class="user_hubs">
+  <h2>Here Are <%= @user.first_name%>'s hubs </h2>
+
+  <% @hubs.each do |hub| %>
+    <div class="aHub">
+      <h2>
+        <a href= "<%= hub.acc_link %>" target="_blank">
+          <%= hub.title %>
+        </a>
+      </h2>
+      <p> <img src="<%= hub.photo_url%>" alt="" /> </p>
+      <p> <%= hub.description %> </p>
+    </div>
+  <% end %>
+
+</section>

@@ -1,6 +1,10 @@
 <h2>Sign in</h2>
-<%= form_tag("/sign_in", method: "post") do %>
+<%= form_for("/sign_in", method: "post") do %>
+<p>
   <input type="text" name="email" placeholder="email" />
+</p>
+<p>
   <input type="password" name="password" placeholder="password" value="<%= cookies[:email] %>" />
+</p>
   <input type="submit" value="Sign in" />
 <% end %>

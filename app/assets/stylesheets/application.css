@@ -13,3 +13,107 @@
  *= require_tree .
  *= require_self
  */
+
+*,
+body {
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+  list-style-type: none;
+  text-decoration: none;
+}
+
+body {
+  margin: 0;
+  paddin: 0;
+  font-family: 'Open Sans', sans-serif;
+}
+
+.wrap {
+  max-width: 75%;
+  margin: 0 auto;
+}
+.top_nav {
+  height: 10%;
+  border-bottom: 1px solid #ccc;
+  margin: 0 auto;
+}
+
+.top_nav p {
+  font-weight: 800;
+  margin-top: 30px;
+  display: inline-block;
+}
+
+.top_nav a {
+  display: inline-block;
+}
+
+.user_profile {
+  margin-top: 10px;
+}
+
+.nav-section {
+  position: relative;
+  margin: 0 auto;
+  display: inline-block;
+  width: 33%;
+  text-align: center;
+}
+
+
+.top_nav h1{
+  font-size: 300%;
+  text-align: center;
+  margin: 1%;
+}
+
+* a {
+  color: #333;
+  margin: 10px;
+}
+
+* a:hover {
+  color: rgb(255, 222, 0);
+}
+
+.navImg {
+  width: 30px;
+  height: 30px;
+}
+
+section {
+  padding: 5%;
+}
+
+.profilePic {
+  max-width: 25%;
+  text-align: center;
+  display: block;
+  margin: 0 auto;
+}
+
+.profileName {
+  display: block;
+  font-size: 200%;
+  max-width: 50%;
+  text-align: center;
+  margin: 0 auto;
+}
+
+.user_profile {
+  text-align: center;
+  margin: 0 auto;
+}
+
+.aHub {
+  /*border: 1px solid red;*/
+  max-width: 20%;
+  display: inline-block;
+  text-align: center;
+  margin: 2%;
+}
+
+.user_profile {
+  border-bottom: 1px solid #444;
+}

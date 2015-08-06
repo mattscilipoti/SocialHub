@@ -1,23 +1,24 @@
-<h1>Here are my Hubs</h1>
+<p>
+  <%= link_to "settings", edit_user_path(session[:user]["id"])  %>
+</p>
+<p>
+  <%= link_to "add a hub", new_hub_path %>
+</p>
+<h1>Dashboard</h1>
 
 <% @hubs.each do |hub| %>
-<div class="hub">
+    <div class="aHub">
+      <h2>
+        <a href="<%= hub.acc_link %>" target="_blank">
+          <%= hub.title %>
+        </a>
+      </h2>
 
-  <img src="<%= hub.photo_url%>" alt="" />
+      <p> <img  alt="" src="<%= hub.photo_url%>"/> </p>
 
-  <h2>
-    <a href= "<%= hub.acc_link %>" target="_blank">
-      <%= hub.title %>
-    </a>
-  </h2>
-
-  <p>
-    <%= hub.description %>
-  </p>
-
-  <p>
-    <%= link_to 'edit', edit_hub_path(hub) %>
-  </p>
-
-</div>
-<% end %>
+      <p> <%= hub.description %> </p>
+      <p class='editHub'>
+        <%= link_to 'Edit ' + hub.title, edit_hub_path(hub) %>
+      </p>
+    </div>
+  <% end %>

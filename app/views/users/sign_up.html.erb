@@ -1,9 +1,23 @@
 <h2>Sign up</h2>
 <%= form_tag("/sign_up", method: "post") do %>
+<p>
   <input type="text" name="first_name" placeholder="first name" />
+</p>
+<p>
   <input type="text" name="last_name" placeholder="last name" />
+</p>
+<p>
+  <input type="text" name="photo_url" placeholder="photo_url">
+</p>
+<p>
   <input type="text" name="email" placeholder="email" />
+</p>
+<p>
   <input type="password" name="password" placeholder="password" />
-  <input type="password" name="password_confirmation" placeholder="password agai n" />
-  <input type="submit" value="Create Account" />
+</p>
+<p>
+  <input type="password" name="password_confirmation" placeholder="password again" />
+</p>
+  
+<input type="submit" value="Create Account" />
 <% end %>

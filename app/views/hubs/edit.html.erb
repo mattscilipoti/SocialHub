@@ -1,20 +1,28 @@
 <h3>Edit A Hub</h3>
 
 <%= form_for @hub do |f| %>
-
+<p>
   <%= f.label :acc_link %>
   <%= f.text_field :acc_link %>
-
+</p>
+<p>
   <%= f.label :photo_url %>
   <%= f.text_field :photo_url %>
+</p>
 
+<p>
   <%= f.label :title %>
   <%= f.text_field :title %>
+</p>
 
+<p>
   <%= f.label :description %>
   <%= f.text_field :description %>
-
+</p>
+<p>
   <%= f.submit %>
+</p>
+
 
 <% end %>
 
