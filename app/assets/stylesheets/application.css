@@ -27,6 +27,7 @@ body {
   margin: 0;
   paddin: 0;
   font-family: 'Open Sans', sans-serif;
+  color: #444
 }
 
 .wrap {
@@ -80,6 +81,7 @@ body {
 .navImg {
   width: 30px;
   height: 30px;
+  border-radius: 50%;
 }
 
 section {
@@ -91,6 +93,7 @@ section {
   text-align: center;
   display: block;
   margin: 0 auto;
+  border-radius: 50%;
 }
 
 .profileName {
@@ -156,4 +159,10 @@ section {
   max-width: 100%;
   margin-top: 1%;
   padding: 1%;
+}
+
+.aForm {
+  width: 20%;
+  margin: 8% auto;
+  text-align: center;
 }

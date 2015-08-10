@@ -1,31 +1,41 @@
-<h3>Edit A Hub</h3>
+<h3>Edit This Hub</h3>
 
 <%= form_for @hub do |f| %>
-<p>
-  <%= f.label :acc_link %>
-  <%= f.text_field :acc_link %>
-</p>
-<p>
-  <%= f.label :photo_url %>
-  <%= f.text_field :photo_url %>
-</p>
 
-<p>
-  <%= f.label :title %>
-  <%= f.text_field :title %>
-</p>
+<div class="aForm">
 
-<p>
-  <%= f.label :description %>
-  <%= f.text_field :description %>
-</p>
-<p>
-  <%= f.submit %>
-</p>
+  <p>
+    <%= f.label :acc_link %>
+      <br>
+    <%= f.text_field :acc_link %>
+  </p>
 
+  <p>
+    <%= f.label :photo_url %>
+      <br>
+    <%= f.text_field :photo_url %>
+  </p>
 
-<% end %>
+  <p>
+    <%= f.label :title %>
+      <br>
+    <%= f.text_field :title %>
+  </p>
+
+  <p>
+    <%= f.label :description %>
+      <br>
+    <%= f.text_field :description %>
+  </p>
+
+  <p>
+    <%= f.submit %>
+  </p>
+
 
 <%= form_for @hub, method: :delete do |f| %>
   <%= f.submit value="Delete"%>
 <% end %>
+
+<% end %>
+</div>

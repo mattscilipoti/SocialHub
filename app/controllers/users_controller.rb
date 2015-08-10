@@ -3,7 +3,8 @@ class UsersController < ApplicationController
 
   def index
     @users = User.all
-    render 'index'
+    @randomUser = Random.new.rand(1..@users.length)
+    redirect_to "/users/#{@randomUser}"
   end
 
   def show
