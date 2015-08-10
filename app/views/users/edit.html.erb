@@ -1,4 +1,5 @@
 <%= form_for @user do |f| %>
+<div class="">
 
 <p>
   <%= f.label :first_name %>
@@ -39,3 +40,9 @@
 <%= f.submit %>
 
 <% end %>
+
+<%= form_for @user, method: :delete do |f| %>
+  <%= f.submit value="Delete"%>
+<% end %>
+
+</div>

@@ -3,7 +3,7 @@ class UsersController < ApplicationController
 
   def index
     @users = User.all
-    @randomUser = Random.new.rand(1..@users.length)
+    @randomUser = Random.new.rand(@users.first.id..@users.length)
     redirect_to "/users/#{@randomUser}"
   end
 
@@ -19,6 +19,14 @@ class UsersController < ApplicationController
   def update
     @user = User.find(session[:user]["id"])
     @user.update(user_params)
+
+    reset_session
+    redirect_to "/"
+  end
+
+  def destroy
+    @user = User.find(params[:id])
+    @user.destroy
 
     reset_session
     redirect_to "/"
