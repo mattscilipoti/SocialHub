@@ -3,8 +3,8 @@ class UsersController < ApplicationController
 
   def index
     @users = User.all
-    @randomUser = Random.new.rand(@users.first.id..@users.length)
-    redirect_to "/users/#{@randomUser}"
+    @randomUser = @users.sample
+    redirect_to user_path(@randomUser)
   end
 
   def show
@@ -13,11 +13,11 @@ class UsersController < ApplicationController
   end
 
   def edit
-    @user = User.find(session[:user]["id"])
+    @user = current_user
   end
 
   def update
-    @user = User.find(session[:user]["id"])
+    @user = current_user
     @user.update(user_params)
 
     reset_session
@@ -76,7 +76,7 @@ class UsersController < ApplicationController
         value: @user.email,
         expires: 100.years.from_now
       }
-      session[:user] = @user
+      session[:user_id] = @user.id
     end
     flash[:notice] = message
     redirect_to "/"

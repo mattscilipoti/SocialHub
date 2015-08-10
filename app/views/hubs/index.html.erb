@@ -6,7 +6,7 @@
 
   <div class="dControls">
     <%= link_to "NEW HUB", new_hub_path %>
-    <%= link_to "SETTINGS", edit_user_path(session[:user]["id"])  %>
+    <%= link_to "SETTINGS", edit_user_path(current_user)  %>
   </div>
 </div>
 

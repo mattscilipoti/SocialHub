@@ -6,8 +6,14 @@ class ApplicationController < ActionController::Base
 
   private
   def authenticate
-    if !session[:user]
+    if !session[:user_id]
       redirect_to "/sign_in"
     end
   end
+
+  def current_user
+    User.find_by(id: session[:user_id])
+  end
+
+  helper_method :current_user
 end
