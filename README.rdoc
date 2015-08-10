@@ -23,11 +23,17 @@ User stories:
 Installing
 
 -Clone the repo
+
 -cd into the repo
+
 -run bundle install
+
 -run rake db:drop, create, migrate
+
 -run rails s
+
 -in browser go to localhost:3000
+
 -profit
 
 planning
