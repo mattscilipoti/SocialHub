@@ -2,6 +2,8 @@ class UsersController < ApplicationController
   skip_before_action :authenticate
 
   def index
+    # mms: prefer getting random user from db, rather return all and then select one
+    # mms: why @users (as instance var)?
     @users = User.all
     @randomUser = @users.sample
     redirect_to user_path(@randomUser)
@@ -19,13 +21,13 @@ class UsersController < ApplicationController
   def update
     @user = current_user
     @user.update(user_params)
-
+    # mms: reset session on every update?  Is there a specific change that requires this?
     reset_session
     redirect_to "/"
   end
 
   def destroy
-    @user = User.find(params[:id])
+    @user = current_user
     @user.destroy
 
     reset_session
@@ -40,6 +42,7 @@ class UsersController < ApplicationController
   end
 
   def sign_up!
+    # mms: recommend changing the form so you can utilize user_params (string params here).
     user = User.new(
       first_name: params[:first_name],
       last_name: params[:last_name],
@@ -66,6 +69,7 @@ class UsersController < ApplicationController
   def sign_in!
     @user = User.find_by(email: params[:email])
 
+    # mms: recommend extracting a `authenticate` method.
     if !@user
       message = "This user doesn't exist!"
     elsif !BCrypt::Password.new( @user.password_digest ).is_password?(params[:password])

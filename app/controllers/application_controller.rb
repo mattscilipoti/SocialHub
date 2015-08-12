@@ -7,10 +7,12 @@ class ApplicationController < ActionController::Base
   private
   def authenticate
     if !session[:user_id]
+      # mms: recommend named route `sign_in_path`, over string
       redirect_to "/sign_in"
     end
   end
 
+  # mms: do you see the benefit of this change?
   def current_user
     User.find_by(id: session[:user_id])
   end

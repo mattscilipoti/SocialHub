@@ -1,5 +1,6 @@
 <h2>Sign up</h2>
 <div class="aForm">
+<!-- mms: recommend using `form_for` , to support strong params -->
 <%= form_tag("/sign_up", method: "post") do %>
 <p>
   <input type="text" name="first_name" placeholder="first name" />

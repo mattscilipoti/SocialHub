@@ -8,12 +8,16 @@ class HubsController < ApplicationController
   end
 
   def create
+    # mms: inline this variable - no need for @user
     @user = current_user
+    # mms: used local var - no view for :create
     @hub = @user.hubs.create!(hub_params)
+    # mms: recommend using named route instead of string.
     redirect_to '/'
   end
 
   def show
+    # mms: no @hub instantiation?  If you don't use :show, remove it.
   end
 
   def edit
@@ -22,6 +26,7 @@ class HubsController < ApplicationController
 
   def update
     @hub = Hub.find(params[:id])
+    # what happens if `hub.update` fails?  Either use if/then or raise the error.
     @hub.update(hub_params)
 
     redirect_to '/'
